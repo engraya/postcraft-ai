@@ -6,19 +6,16 @@ import { Video } from "@/components/Video";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
-
 import { benefitOne, benefitTwo } from "@/components/data";
 export default function Home() {
   return (
     <Container>
       <Hero />
       <SectionTitle
-        preTitle="Nextly Benefits"
-        title=" Why should you use this landing page"
+        preTitle="Postcraft-AI Benefits"
+        title="Why should you use Postcraft-AI"
       >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        Generate captivating social media content in seconds with AI. Whether you're an influencer, marketer, or small business owner, PostCraft AI is your go-to tool for high-converting posts that boost engagement.
       </SectionTitle>
 
       <Benefits data={benefitOne} />
@@ -26,11 +23,9 @@ export default function Home() {
 
       <SectionTitle
         preTitle="Watch a video"
-        title="Learn how to fullfil your needs"
+        title="See PostCraft AI in Action"
       >
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
+        Watch how our AI transforms content creation into an effortless process. From generating posts to customizing them for different platforms, PostCraft AI does it all—so you can focus on growing your brand.
       </SectionTitle>
 
       <Video videoId="fZ0D0cnR88E" />

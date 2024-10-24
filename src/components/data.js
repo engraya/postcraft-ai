@@ -11,46 +11,46 @@ import benefitOneImg from "../../public/img/benefit-one.png";
 import benefitTwoImg from "../../public/img/benefit-two.png";
 
 const benefitOne = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
+  title: "Benefits of PostCraft AI",
+  desc: "",
   image: benefitOneImg,
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
+      title: "Saves Time",
+      desc: "Cut down hours spent brainstorming and drafting social media posts. PostCraft AI generates professional content in seconds, freeing up time for other priorities.",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
+      title: "Boosts Engagement",
+      desc: "Create highly engaging, platform-specific content that resonates with your audience, increasing likes, comments, and shares.",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
+      title: "Improves Consistency",
+      desc: "Maintain a consistent posting schedule effortlessly with content always ready to go, improving your online presence and follower engagement.",
       icon: <CursorArrowRaysIcon />,
     },
   ],
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: "Features of PostCraft AI",
+  desc: "",
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "AI-Powered Content Generation",
+      desc: "Generate high-quality, engaging content in seconds using advanced AI algorithms tailored to your brand’s voice and audience preferences.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
+      title: "Platform-Specific Content",
+      desc: "Customize content for major platforms like Instagram, Facebook, Twitter, LinkedIn, and more, ensuring the right tone and style for each channel.",
       icon: <AdjustmentsHorizontalIcon />,
     },
     {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
+      title: "Customizable Output",
+      desc: "Adjust the generated content's tone, length, and keywords to perfectly match your brand’s personality and messaging.",
       icon: <SunIcon />,
     },
   ],
