@@ -13,7 +13,7 @@ export const Hero = () => {
             Create Smarter, Post Faster with AI
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-            Let AI handle the heavy lifting. From captions to blogs, PostCraft AI generates personalized, high-impact content for your social media in seconds. Say goodbye to writer's block and hello to effortless creativity.
+            Let AI handle the heavy lifting. From captions to blogs, PostCraft AI generates personalized, high-impact content for your social media in seconds. Say goodbye to writers block and hello to effortless creativity.
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">

@@ -15,7 +15,7 @@ export default function Home() {
         preTitle="Postcraft-AI Benefits"
         title="Why should you use Postcraft-AI"
       >
-        Generate captivating social media content in seconds with AI. Whether you're an influencer, marketer, or small business owner, PostCraft AI is your go-to tool for high-converting posts that boost engagement.
+        Generate captivating social media content in seconds with AI. Whether you are an influencer, marketer, or small business owner, PostCraft AI is your go-to tool for high-converting posts that boost engagement.
       </SectionTitle>
 
       <Benefits data={benefitOne} />
