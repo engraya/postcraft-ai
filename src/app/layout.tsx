@@ -5,7 +5,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PopupWidget }  from "@/components/PopupWidget";
-
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,15 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class">
-          <Navbar />
-          <div>{children}</div>
-          <Footer />
-          <PopupWidget />
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
+          <ThemeProvider attribute="class">
+            <Navbar />
+            <div>{children}</div>
+            <Footer />
+            <PopupWidget />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
+
   );
 }
