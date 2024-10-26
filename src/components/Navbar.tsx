@@ -15,6 +15,7 @@ import { logo } from "../../public/images";
 export const Navbar = () => {
   const navigation = [
     { name: "Home", href: "/" },
+    { name: "Generate", href: "/generate" },
     { name: "Dashboard", href: "/dashboard" },
     { name: "About", href: "/about" },
     { name: "Features", href: "/features" },
@@ -45,6 +46,7 @@ export const Navbar = () => {
           <ThemeChanger />
           <div className="hidden mr-3 lg:flex nav__item">
             <SignedOut>
+              <div className="flex gap-4">
               <SignInButton mode="modal">
                 <button className="bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-bold py-2 px-4 rounded">
                   Sign In
@@ -55,6 +57,7 @@ export const Navbar = () => {
                   Sign Up
                 </button>
               </SignUpButton>
+              </div>
             </SignedOut>
             <SignedIn>
               <UserButton

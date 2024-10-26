@@ -1,7 +1,7 @@
 import { db } from "./dbConfig";
 import { Users, Subscriptions, GeneratedContent } from "./schema";
 import { eq, sql, and, desc } from "drizzle-orm";
-// import { sendWelcomeEmail, initMailtrap } from "../mailtrap";
+import { sendWelcomeEmail, initMailtrap } from "./mailtrap";
 
 export async function updateUserPoints(userId: string, points: number) {
   try {
@@ -92,7 +92,6 @@ export async function createOrUpdateSubscription(
         .returning()
         .execute();
     }
-
     console.log("Subscription created or updated:", subscription);
     return subscription;
   } catch (error) {
@@ -196,7 +195,7 @@ export async function createOrUpdateUser(
         .returning()
         .execute();
       console.log("Updated user:", updatedUser);
-    //   sendWelcomeEmail(email, name);
+      sendWelcomeEmail(email, name);
       return updatedUser;
     }
 
@@ -206,7 +205,7 @@ export async function createOrUpdateUser(
       .returning()
       .execute();
     console.log("New user created:", newUser);
-    // sendWelcomeEmail(email, name);
+    sendWelcomeEmail(email, name);
     return newUser;
   } catch (error) {
     console.error("Error creating or updating user:", error);
