@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from "next/image"
 function AboutPage() {
   return (
     <section className="py-12">
@@ -7,7 +7,7 @@ function AboutPage() {
       <div className="sm:flex items-center max-w-screen-xl">
   <div className="sm:w-1/2 p-10">
     <div className="image object-center text-center">
-      <img src="https://i.imgur.com/WbQnbas.png" alt='about-img'/>
+      <Image src="https://i.imgur.com/WbQnbas.png" height={100} width={100} alt='about-img'/>
     </div>
   </div>
   <div className="sm:w-1/2 p-5">
@@ -16,13 +16,12 @@ function AboutPage() {
       <h2 className="my-4 font-bold text-3xl  sm:text-4xl ">About <span className="text-indigo-600">Postcraft-AI</span>
       </h2>
       <p className="dark:text-gray-300">
-      At PostCraft AI, we believe that content creation should be accessible and stress-free for everyone. We built PostCraft AI with a mission to empower creators, marketers, and businesses with the tools to quickly generate and customize social media content that resonates with their audiences. Using state-of-the-art AI technology, we analyze current trends and user preferences to deliver personalized, relevant content that helps boost your online presence. Whether you're a busy entrepreneur or an influencer looking to grow your audience, PostCraft AI is designed to make your content stand out—without spending hours brainstorming.
+      At PostCraft AI, we believe that content creation should be accessible and stress-free for everyone. We built PostCraft AI with a mission to empower creators, marketers, and businesses with the tools to quickly generate and customize social media content that resonates with their audiences. Using state-of-the-art AI technology, we analyze current trends and user preferences to deliver personalized, relevant content that helps boost your online presence. Whether you are a busy entrepreneur or an influencer looking to grow your audience, PostCraft AI is designed to make your content stand out—without spending hours brainstorming.
       </p>
     </div>
   </div>
 </div>
-
-      </div>
+</div>
     </section>
   )
 }
