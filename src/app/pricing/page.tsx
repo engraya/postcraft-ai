@@ -8,8 +8,8 @@ import { useUser } from "@clerk/nextjs";
 const pricingPlans = [
   {
     name: "Basic",
-    price: "9",
-    priceId: "",
+    price: "15",
+    priceId: "price_1QEC7RGSVvx5bt6jB3BPdBz4",
     features: [
       "Custom for starters",
       "100 AI-generated posts per month",
@@ -19,8 +19,8 @@ const pricingPlans = [
   },
   {
     name: "Pro",
-    price: "29",
-    priceId: "",
+    price: "47",
+    priceId: "price_1QEC8mGSVvx5bt6jb4oa5vby",
     features: [
       "500 AI-generated posts per month",
       "Twitter, Instagram, and LinkedIn content",
@@ -93,9 +93,9 @@ function PricingPage() {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {pricingPlans.map((plan) => (
+          {pricingPlans.map((plan, index) => (
             <div
-              key={plan.name}
+              key={index}
               className="bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300"
             >
               <div className="mb-8">

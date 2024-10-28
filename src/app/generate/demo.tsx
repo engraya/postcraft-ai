@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Spinner from "@/components/Spinner";
 import {
   Select,
   SelectContent,
@@ -113,7 +112,7 @@ export default function GenerateContentPage() {
 
   const fetchContentHistory = async () => {
     if (user?.id) {
-      const contentHistory = await getGeneratedContentHistory(user?.id);
+      const contentHistory = await getGeneratedContentHistory(user.id);
       setHistory(contentHistory);
     }
   };
@@ -242,7 +241,7 @@ export default function GenerateContentPage() {
   };
 
   if (!isLoaded) {
-    return <><Spinner/></>;
+    return <div>Loading...</div>;
   }
 
   if (!isSignedIn) {
@@ -271,16 +270,7 @@ export default function GenerateContentPage() {
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-      if (file.size > 1024 * 10240) { // Example: limit file size to 10MB
-        alert("Image size should be less than 10MB.");
-        return;
-      }
-      if (!file.type.startsWith("image/")) {
-        alert("Please upload a valid image file.");
-        return;
-      }
-      setImage(file);
+      setImage(event.target.files[0]);
     }
   };
 
