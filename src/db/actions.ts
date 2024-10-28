@@ -1,4 +1,5 @@
-// import { db } from "./dbConfig";
+"use server"
+
 import { Users, Subscriptions, GeneratedContent } from "./schema";
 import { eq, sql, and, desc } from "drizzle-orm";
 import { sendWelcomeEmail, initMailtrap } from "./mailtrap";
@@ -23,26 +24,36 @@ export async function updateUserPoints(userId: string, points: number) {
   }
 }
 
-export async function getUserPoints(userId: string) {
+export async function getUserPoints(userId: string): Promise<number> {
   try {
     console.log("Fetching points for user:", userId);
+
     const users = await db
-      .select({ points: Users.points, id: Users.id, email: Users.email })
+      .select({
+        points: Users.points, 
+        id: Users.id, 
+        email: Users.email
+      })
       .from(Users)
       .where(eq(Users.stripeCustomerId, userId))
-      .execute();
+
     console.log("Fetched users:", users);
+
     if (users.length === 0) {
       console.log("No user found with stripeCustomerId:", userId);
-      return 0;
+      return 0; // Return 0 if no user is found
     }
-    return users[0].points || 0;
+
+    // Ensure points is a valid number
+    const userPoints = users[0]?.points ?? 0;
+    console.log("Returning points:", userPoints);
+    return userPoints;
+
   } catch (error) {
     console.error("Error fetching user points:", error);
-    return 0;
+    return 0; // Return 0 in case of an error
   }
 }
-
 export async function createOrUpdateSubscription(
   userId: string,
   stripeSubscriptionId: string,

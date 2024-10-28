@@ -92,8 +92,9 @@ export default function GenerateContentPage() {
 
   const fetchUserPoints = async () => {
     if (user?.id) {
+
       console.log("Fetching points for user:", user.id);
-      const points = await getUserPoints(user.id);
+      const points = await getUserPoints(user?.id);
       console.log("Fetched points:", points);
       setUserPoints(points);
       if (points === 0) {
@@ -285,49 +286,48 @@ export default function GenerateContentPage() {
   };
 
   return (
-    <section className="py-12">
+    <section className="py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto px-4 mb-8 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 mt-14 lg:grid-cols-3 gap-8">
           {/* Left sidebar - History */}
-          <div className="lg:col-span-1 bg-gray-800 rounded-2xl p-6 h-[calc(100vh-12rem)] overflow-y-auto">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-semibold text-blue-400">History</h2>
-              <Clock className="h-6 w-6 text-blue-400" />
-            </div>
-            <div className="space-y-4">
-              {history.map((item) => (
-                <div
-                  key={item.id}
-                  className="p-4 bg-gray-700 rounded-xl hover:bg-gray-600 transition-colors cursor-pointer"
-                  onClick={() => handleHistoryItemClick(item)}
-                >
-                  <div className="flex items-center mb-2">
-                    {item.contentType === "twitter" && (
-                      <Twitter className="mr-2 h-5 w-5 text-blue-400" />
-                    )}
-                    {item.contentType === "instagram" && (
-                      <Instagram className="mr-2 h-5 w-5 text-pink-400" />
-                    )}
-                    {item.contentType === "linkedin" && (
-                      <Linkedin className="mr-2 h-5 w-5 text-blue-600" />
-                    )}
-                    <span className="text-sm font-medium">
-                      {item.contentType}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-300 truncate">
-                    {item.prompt}
-                  </p>
-                  <div className="flex items-center text-xs text-gray-400 mt-2">
-                    <Clock className="mr-1 h-3 w-3" />
-                    {new Date(item.createdAt).toLocaleString()}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className="lg:col-span-1 bg-gray-800 rounded-2xl p-6 overflow-y-auto">
+  <div className="flex items-center justify-between mb-6">
+    <h2 className="text-2xl font-semibold text-blue-400">History</h2>
+    <Clock className="h-6 w-6 text-blue-400" />
+  </div>
+  <div className="space-y-4">
+    {history.length > 0 ? (
+      history.map((item) => (
+        <div
+          key={item.id}
+          className="p-4 bg-gray-700 rounded-xl hover:bg-gray-600 transition-colors cursor-pointer"
+          onClick={() => handleHistoryItemClick(item)}
+        >
+          <div className="flex items-center mb-2">
+            {item.contentType === "twitter" && (
+              <Twitter className="mr-2 h-5 w-5 text-blue-400" />
+            )}
+            {item.contentType === "instagram" && (
+              <Instagram className="mr-2 h-5 w-5 text-pink-400" />
+            )}
+            {item.contentType === "linkedin" && (
+              <Linkedin className="mr-2 h-5 w-5 text-blue-600" />
+            )}
+            <span className="text-sm font-medium">{item.contentType}</span>
           </div>
-
+          <p className="text-sm text-gray-300 truncate">{item.prompt}</p>
+          <div className="flex items-center text-xs text-gray-400 mt-2">
+            <Clock className="mr-1 h-3 w-3" />
+            {new Date(item.createdAt).toLocaleString()}
+          </div>
+        </div>
+      ))
+    ) : (
+      <p className="text-center text-gray-400">No content available</p>
+    )}
+  </div>
+</div>
           {/* Main content area */}
           <div className="lg:col-span-2 space-y-6">
             {/* Points display */}
@@ -430,7 +430,6 @@ export default function GenerateContentPage() {
                 onClick={handleGenerate}
                 disabled={
                   isLoading ||
-                  !prompt ||
                   userPoints === null ||
                   userPoints < POINTS_PER_GENERATION
                 }

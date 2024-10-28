@@ -2,8 +2,14 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import heroImg from "../../public/img/hero.png";
 import Link from "next/link";
+import { SignUpButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import {
+  ArrowRightIcon,
+} from "lucide-react";
 
 export const Hero = () => {
+    const { userId } = auth();
   return (
     <>
       <Container className="flex flex-wrap ">
@@ -17,13 +23,22 @@ export const Hero = () => {
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
+            {userId ? (
               <Link
-                href="#"
-                target="_blank"
-                rel="noopener"
+              href="/generate"
+              target="_blank"
+              rel="noopener"
+              className="px-4 py-2 flex justify-center items-center text-lg font-medium whitespace-nowrap text-center bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-md ">
+                Generate Content Now <ArrowRightIcon className="ml-2 h-5 w-5" />
+            </Link>
+          ) : (
+            <SignUpButton mode="modal">
+              <button
                 className="px-6 py-2 text-lg font-medium text-center text-white bg-indigo-600 rounded-md ">
-                Get started
-              </Link>
+                Get Started Free <ArrowRightIcon className="ml-2 h-5 w-5" />
+              </button>
+            </SignUpButton>
+          )}
               <Link
                 href="https://github.com/engraya/postcraft-ai"
                 target="_blank"
@@ -66,7 +81,7 @@ export const Hero = () => {
             customers worldwide
           </div>
 
-          <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
+          {/* <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
             <div className="pt-2 text-gray-400 dark:text-gray-400">
               <AmazonLogo />
             </div>
@@ -82,7 +97,7 @@ export const Hero = () => {
             <div className="pt-2 text-gray-400 dark:text-gray-400">
               <SonyLogo />
             </div>
-          </div>
+          </div> */}
         </div>
       </Container>
     </>
