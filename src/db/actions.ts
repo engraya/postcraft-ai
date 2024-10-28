@@ -1,7 +1,12 @@
-import { db } from "./dbConfig";
+// import { db } from "./dbConfig";
 import { Users, Subscriptions, GeneratedContent } from "./schema";
 import { eq, sql, and, desc } from "drizzle-orm";
 import { sendWelcomeEmail, initMailtrap } from "./mailtrap";
+
+import 'dotenv/config';
+import { drizzle } from 'drizzle-orm/neon-http';
+
+const db = drizzle(process.env.DATABASE_URL!);
 
 export async function updateUserPoints(userId: string, points: number) {
   try {

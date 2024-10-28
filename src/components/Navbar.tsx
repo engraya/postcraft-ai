@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
@@ -15,8 +16,6 @@ import { logo } from "../../public/images";
 export const Navbar = () => {
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Generate", href: "/generate" },
-    { name: "Dashboard", href: "/dashboard" },
     { name: "About", href: "/about" },
     { name: "Features", href: "/features" },
     { name: "Pricing", href: "/pricing" },
@@ -47,16 +46,16 @@ export const Navbar = () => {
           <div className="hidden mr-3 lg:flex nav__item">
             <SignedOut>
               <div className="flex gap-4">
-              <SignInButton mode="modal">
-                <button className="bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-bold py-2 px-4 rounded">
-                  Sign In
-                </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded">
-                  Sign Up
-                </button>
-              </SignUpButton>
+                <SignInButton mode="modal">
+                  <button className="bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-bold py-2 px-4 rounded">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded">
+                    Sign Up
+                  </button>
+                </SignUpButton>
               </div>
             </SignedOut>
             <SignedIn>
@@ -149,6 +148,17 @@ export const Navbar = () => {
                 </Link>
               </li>
             ))}
+            {/* Show "Generate" only when the user is signed in */}
+            <SignedIn>
+              <li className="mr-3 nav__item">
+                <Link
+                  href="/generate"
+                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                >
+                  Generate
+                </Link>
+              </li>
+            </SignedIn>
           </ul>
         </div>
       </nav>
