@@ -10,7 +10,7 @@ export const Testimonials = () => {
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <div className="lg:col-span-2 xl:col-auto">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-6 rounded-2xl py-6 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
               <Mark>PostCraft AI</Mark> has revolutionized how I handle my content creation. I can now create engaging posts in a fraction of the time! Highly recommended
             </p>
@@ -23,7 +23,7 @@ export const Testimonials = () => {
           </div>
         </div>
         <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-6 rounded-2xl py-6 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
               As a small business owner, I used to struggle with what to post on social media. <Mark>PostCraft AI </Mark> gives me fresh ideas every day, and my engagement has never been better!
             </p>
@@ -36,7 +36,7 @@ export const Testimonials = () => {
           </div>
         </div>
         <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-6 rounded-2xl py-6 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
               I used to spend hours thinking about captions. Now, with <Mark> PostCraft AI</Mark> , I can focus on my business while the AI handles the content effortlessly.
             </p>

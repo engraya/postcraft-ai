@@ -21,14 +21,14 @@ export default function Home() {
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
 
-      <SectionTitle
+      {/* <SectionTitle
         preTitle="Watch a video"
         title="See PostCraft AI in Action"
       >
         Watch how our AI transforms content creation into an effortless process. From generating posts to customizing them for different platforms, PostCraft AI does it all—so you can focus on growing your brand.
-      </SectionTitle>
+      </SectionTitle> */}
 
-      <Video videoId="fZ0D0cnR88E" />
+      {/* <Video videoId="fZ0D0cnR88E" /> */}
 
       <SectionTitle
         preTitle="Testimonials"
